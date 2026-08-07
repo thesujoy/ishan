@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ishan | Personal Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="favicon.png">
+
+<!-- Apple / Mobile Icon -->
+<link rel="apple-touch-icon" href="favicon.png">
+
+
+<!-- Website Preview when shared -->
+
+<meta property="og:title" content="Ishan | Bibliophile & Curious Explorer">
+
+<meta property="og:description" content="A personal space of Ishan — a bibliophile with curiosity about the known and the unknown.">
+
+<meta property="og:image" content="https://ishan.org.in/Ishan.jpeg">
+
+<meta property="og:url" content="https://ishan.org.in/">
+
+<meta property="og:type" content="website">
+
+
+<!-- X (Twitter) Preview -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Ishan | Personal Website">
+
+<meta name="twitter:description" content="Bibliophile • Curious Explorer • Lifelong Learner">
+
+<meta name="twitter:image" content="https://ishan.org.in/Ishan.jpeg">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:"Poppins",sans-serif;
+
+background:#0f0f12;
+
+color:#fff;
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:30px;
+
+position:relative;
+
+}
+
+/* =============================
+   Animated Background
+============================= */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:700px;
+height:700px;
+
+background:radial-gradient(circle,#ff4d6d55,transparent 70%);
+
+top:-250px;
+left:-250px;
+
+filter:blur(80px);
+
+animation:moveOne 18s ease-in-out infinite alternate;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:650px;
+height:650px;
+
+background:radial-gradient(circle,#ffd16633,transparent 70%);
+
+right:-220px;
+bottom:-220px;
+
+filter:blur(90px);
+
+animation:moveTwo 20s ease-in-out infinite alternate;
+
+z-index:-2;
+
+}
+
+@keyframes moveOne{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(180px,120px);
+
+}
+
+}
+
+@keyframes moveTwo{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-150px,-120px);
+
+}
+
+}
+
+/* Small Floating Dots */
+
+.dot{
+
+position:fixed;
+
+width:4px;
+height:4px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.25);
+
+animation:float 10s linear infinite;
+
+z-index:-1;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(110vh);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+80%{
+
+opacity:1;
+
+}
+
+to{
+
+transform:translateY(-20vh);
+
+opacity:0;
+
+}
+
+}
+
+/* ============================= */
+
+.card{
+
+width:760px;
+
+max-width:100%;
+
+padding:35px 40px;
+
+text-align:center;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+
+0 15px 50px rgba(0,0,0,.35);
+
+animation:fade .8s ease;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* Profile */
+
+.profile{
+
+width:170px;
+height:170px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+display:block;
+
+margin:auto;
+
+border:4px solid #ff4d6d;
+
+box-shadow:
+
+0 0 20px rgba(255,77,109,.35);
+
+transition:.4s;
+
+}
+
+.profile:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+
+0 0 40px rgba(255,77,109,.6);
+
+}
+
+h1{
+
+margin-top:18px;
+
+font-size:44px;
+
+font-weight:700;
+
+letter-spacing:1px;
+
+}
+
+.tagline{
+
+margin-top:6px;
+
+font-size:18px;
+
+font-weight:500;
+
+color:#ffd166;
+
+}
+
+.bio{
+
+max-width:560px;
+
+margin:18px auto;
+
+font-size:17px;
+
+line-height:1.7;
+
+color:#ececec;
+
+}
+
+.social{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+margin-top:25px;
+
+}
+
+
+.social a{
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:21px;
+
+color:#fff;
+
+text-decoration:none;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.12);
+
+transition:.35s;
+
+}
+
+
+.social a:hover{
+
+transform:translateY(-6px);
+
+background:#ff4d6d;
+
+color:white;
+
+box-shadow:
+
+0 10px 25px rgba(255,77,109,.45);
+
+}
+
+
+.social a:nth-child(2):hover{
+
+background:#e1306c;
+
+box-shadow:
+
+0 10px 25px rgba(225,48,108,.45);
+
+}
+
+
+.social a:nth-child(3):hover{
+
+background:#000;
+
+border-color:#fff;
+
+}
+
+
+/* Footer */
+
+footer{
+
+margin-top:25px;
+
+font-size:13px;
+
+color:#aaa;
+
+}
+
+
+
+/* Mobile */
+
+@media(max-width:600px){
+
+body{
+
+padding:20px;
+
+}
+
+
+.card{
+
+padding:30px 20px;
+
+}
+
+
+.profile{
+
+width:140px;
+
+height:140px;
+
+}
+
+
+h1{
+
+font-size:34px;
+
+}
+
+
+.bio{
+
+font-size:15px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- Floating particles -->
+
+<div class="dot" style="left:10%;animation-delay:0s"></div>
+
+<div class="dot" style="left:25%;animation-delay:3s"></div>
+
+<div class="dot" style="left:45%;animation-delay:1s"></div>
+
+<div class="dot" style="left:65%;animation-delay:5s"></div>
+
+<div class="dot" style="left:85%;animation-delay:2s"></div>
+
+
+
+<div class="card">
+
+
+<!-- Replace image URL -->
+
+<img 
+src="Ishan.jpeg"
+alt="Ishan"
+class="profile">
+
+
+
+<h1>
+Ishan
+</h1>
+
+
+<div class="tagline">
+
+📚 Bibliophile • Curious Explorer
+
+</div>
+
+
+
+<p class="bio">
+
+Hi, I'm <strong>Ishan</strong> — a bibliophile with an endless curiosity about the known and the unknown.
+I enjoy exploring books, ideas, history, and technology while constantly discovering new perspectives.
+
+</p>
+<br><br><br>
+
+
+<div class="social">
+
+
+<a href="https://facebook.com/itsIshanSarkar" target="_blank">
+
+<i class="fab fa-facebook-f"></i>
+
+</a>
+
+
+<a href="https://instagram.com/itsIshanSarkar" target="_blank">
+
+<i class="fab fa-instagram"></i>
+
+</a>
+
+
+<a href="https://x.com/itsIshanSarkar" target="_blank">
+
+<i class="fab fa-x-twitter"></i>
+
+</a>
+
+
+</div>
+
+<br><br><br>
+
+<footer>
+
+© 2026 Ishan. All Rights Reserved.
+
+</footer>
+
+
+</div>
+
+
+
+<script>
+
+
+// Extra floating particle effect
+
+for(let i=0;i<25;i++){
+
+
+let particle=document.createElement("div");
+
+
+particle.className="dot";
+
+
+particle.style.left=Math.random()*100+"%";
+
+
+particle.style.animationDuration=
+(8+Math.random()*12)+"s";
+
+
+particle.style.animationDelay=
+Math.random()*8+"s";
+
+
+particle.style.width=
+(2+Math.random()*4)+"px";
+
+
+particle.style.height=
+particle.style.width;
+
+
+document.body.appendChild(particle);
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
